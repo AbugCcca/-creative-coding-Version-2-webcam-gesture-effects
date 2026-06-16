@@ -39,11 +39,11 @@ button {
   position: fixed;
   inset: 0;
   min-width: 320px;
-  background: #000;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(28, 45, 60, 0.38), transparent 42%),
+    #000;
 }
 
-.camera-background,
-.ar-canvas,
 .particle-canvas {
   position: absolute;
   inset: 0;
@@ -52,31 +52,19 @@ button {
   display: block;
 }
 
-.camera-background {
-  z-index: 0;
-  object-fit: cover;
-  transform: scaleX(-1);
-  background: #000;
-}
-
-.ar-canvas,
-.particle-canvas {
-  z-index: 1;
-  pointer-events: none;
-}
-
-.status-overlay {
+.input-mode-badge {
   position: absolute;
   left: 20px;
   top: 20px;
-  z-index: 3;
   display: grid;
-  gap: 5px;
-  min-width: 190px;
-  padding: 10px 12px;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: baseline;
+  min-height: 36px;
+  padding: 8px 12px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
-  color: rgba(245, 251, 255, 0.82);
+  color: rgba(245, 251, 255, 0.76);
   background: rgba(8, 12, 16, 0.66);
   box-shadow: 0 14px 42px rgba(0, 0, 0, 0.34);
   backdrop-filter: blur(14px);
@@ -85,17 +73,11 @@ button {
   letter-spacing: 0;
 }
 
-.status-mode {
-  display: flex;
-  gap: 8px;
-  align-items: baseline;
-}
-
-.status-overlay strong {
+.input-mode-badge strong {
   color: #fff;
 }
 
-.status-overlay[data-mode='Gesture'] {
+.input-mode-badge[data-mode='Gesture'] {
   border-color: rgba(143, 233, 255, 0.45);
   box-shadow:
     0 14px 42px rgba(0, 0, 0, 0.34),
@@ -106,7 +88,6 @@ button {
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 3;
   width: min(320px, calc(100vw - 40px));
   max-height: calc(100vh - 40px);
   overflow-y: auto;
@@ -268,10 +249,10 @@ button {
 
 @media (max-width: 640px) {
   .control-panel {
-    top: 112px;
+    top: 58px;
     right: 12px;
     width: min(260px, calc(100vw - 24px));
-    max-height: calc(100vh - 124px);
+    max-height: calc(100vh - 70px);
     padding: 14px;
   }
 
@@ -297,10 +278,8 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .status-overlay {
+  .input-mode-badge {
     top: 12px;
     left: 12px;
-    min-width: 176px;
-    font-size: 0.72rem;
   }
 }
