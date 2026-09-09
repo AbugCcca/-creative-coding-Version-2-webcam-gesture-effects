@@ -2,6 +2,15 @@
 
 一个适合初学者维护的 Vite + React + JavaScript 全屏互动粒子 demo。
 
+## Demo video
+
+https://github.com/user-attachments/assets/e1d7249e-b015-4701-8410-8bcb44c55858
+
+
+
+
+
+
 ## 安装依赖
 
 ```bash
